@@ -1,3 +1,4 @@
+use crate::named_params;
 use argon2::{Argon2, PasswordHash, PasswordVerifier};
 use axum::{
   extract::{Query, State},
@@ -7,7 +8,6 @@ use axum::{
 use lazy_static::lazy_static;
 use serde::{Deserialize, Serialize};
 use tower_cookies::Cookies;
-use trailbase_sqlite::named_params;
 use ts_rs::TS;
 use utoipa::{IntoParams, ToSchema};
 

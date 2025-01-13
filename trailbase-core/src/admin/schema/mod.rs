@@ -2,7 +2,7 @@ use axum::extract::{Json, State};
 use serde::{Deserialize, Serialize};
 use ts_rs::TS;
 
-use trailbase_sqlite::schema::{get_schemas, set_user_schema};
+use crate::database::schema::{get_schemas, set_user_schema};
 
 use crate::admin::AdminError as Error;
 use crate::app_state::AppState;

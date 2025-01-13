@@ -1,4 +1,7 @@
 //! Parse multipart form requests
+use crate::database::params::{NamedParams, Params as _};
+use crate::database::schema::{FileUpload, FileUploads};
+use crate::database::types::Value;
 use axum::{
   body::Body,
   extract::{FromRequest, Request},
@@ -6,7 +9,6 @@ use axum::{
 use serde::de::DeserializeOwned;
 use serde_json::json;
 use thiserror::Error;
-use trailbase_sqlite::schema::FileUploadInput;
 
 #[derive(Debug, Error)]
 pub enum Rejection {

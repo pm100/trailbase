@@ -6,6 +6,7 @@ pub mod app_state;
 pub mod assets;
 pub mod config;
 pub mod constants;
+pub mod database;
 pub mod logging;
 pub mod records;
 pub mod util;
@@ -59,7 +60,7 @@ pub mod openapi {
 }
 
 pub mod api {
-  pub use trailbase_sqlite::connect_sqlite;
+  //pub use trailbase_sqlite::connect_sqlite;
 
   pub use crate::admin::user::{create_user_handler, CreateUserRequest};
   pub use crate::auth::api::login::login_with_password;

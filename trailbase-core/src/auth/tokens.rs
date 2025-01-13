@@ -1,3 +1,4 @@
+use crate::params;
 use axum::{
   async_trait,
   extract::{FromRef, FromRequestParts},
@@ -6,7 +7,6 @@ use axum::{
 use chrono::Duration;
 use lazy_static::lazy_static;
 use tower_cookies::Cookies;
-use trailbase_sqlite::params;
 
 use crate::app_state::AppState;
 use crate::auth::jwt::TokenClaims;

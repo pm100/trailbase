@@ -103,7 +103,7 @@ pub fn row_to_json_array(row: &trailbase_sqlite::Row) -> Result<Vec<serde_json::
 /// WARN: This is lossy and whenever possible we should rely on parsed "CREATE TABLE" statement for
 /// the respective column.
 fn rows_to_columns(rows: &trailbase_sqlite::Rows) -> Result<Vec<Column>, rusqlite::Error> {
-  use trailbase_sqlite::ValueType as T;
+  use crate::database::schema::ValueType as T;
 
   let mut columns: Vec<Column> = vec![];
   for i in 0..rows.column_count() {

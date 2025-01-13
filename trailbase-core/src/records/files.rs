@@ -1,14 +1,14 @@
+//use crate::database::schema::{FileUpload, FileUploads};
 use axum::body::Body;
 use axum::http::header;
 use axum::response::{IntoResponse, Response};
 use log::*;
 use object_store::ObjectStore;
 use thiserror::Error;
-use trailbase_sqlite::schema::{FileUpload, FileUploads};
 
 use crate::app_state::AppState;
+use crate::database::schema::{FileUpload, FileUploads};
 use crate::table_metadata::{JsonColumnMetadata, TableOrViewMetadata};
-
 #[derive(Debug, Error)]
 pub enum FileError {
   #[error("Storage error: {0}")]

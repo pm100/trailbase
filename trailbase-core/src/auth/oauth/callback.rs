@@ -1,3 +1,4 @@
+use crate::{named_params, params};
 use axum::{
   extract::{Path, Query, State},
   response::Redirect,
@@ -10,7 +11,6 @@ use oauth2::{AuthorizationCode, StandardTokenResponse, TokenResponse};
 use serde::Deserialize;
 use thiserror::Error;
 use tower_cookies::Cookies;
-use trailbase_sqlite::{named_params, params};
 
 use crate::auth::oauth::state::{OAuthState, ResponseType};
 use crate::auth::oauth::OAuthUser;

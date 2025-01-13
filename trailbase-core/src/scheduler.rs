@@ -1,7 +1,7 @@
+use crate::params;
 use chrono::{Duration, Utc};
 use log::*;
 use std::future::Future;
-use trailbase_sqlite::params;
 
 use crate::app_state::AppState;
 use crate::constants::{DEFAULT_REFRESH_TOKEN_TTL, LOGS_RETENTION_DEFAULT, SESSION_TABLE};

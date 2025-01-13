@@ -1,3 +1,6 @@
+use crate::database::params::{NamedParams, Params as _};
+use crate::database::schema::{FileUpload, FileUploads};
+use crate::database::types::Value;
 use axum::async_trait;
 use axum::extract::{rejection::*, Form, FromRequest, Request};
 use axum::http::header::CONTENT_TYPE;
@@ -8,7 +11,6 @@ use log::*;
 use serde::de::DeserializeOwned;
 use serde::Serialize;
 use thiserror::Error;
-use trailbase_sqlite::schema::FileUploadInput;
 
 use crate::extract::multipart::{parse_multipart, Rejection as MultipartRejection};
 

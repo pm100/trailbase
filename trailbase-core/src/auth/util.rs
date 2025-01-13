@@ -2,10 +2,10 @@ use axum::http::request::Parts;
 use base64::prelude::*;
 use chrono::Duration;
 use cookie::SameSite;
+
 use lazy_static::lazy_static;
 use sha2::{Digest, Sha256};
 use tower_cookies::{Cookie, Cookies};
-use trailbase_sqlite::params;
 
 use crate::auth::user::{DbUser, User};
 use crate::auth::AuthError;

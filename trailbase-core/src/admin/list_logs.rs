@@ -285,7 +285,9 @@ async fn fetch_aggregate_stats(
   "#
   );
 
-  use trailbase_sqlite::Value::Integer;
+  use crate::database::params::NamedParams;
+  use crate::database::schema::{FileUpload, FileUploads};
+  use crate::database::types::Value::Integer;
   let from_seconds = args.from.timestamp();
   let interval_seconds = args.interval.num_seconds();
   let mut params = Vec::<(Cow<'_, str>, trailbase_sqlite::Value)>::with_capacity(16);

@@ -1,3 +1,4 @@
+use crate::named_params;
 use axum::{
   extract::{Path, Query, State},
   http::StatusCode,
@@ -5,7 +6,6 @@ use axum::{
 };
 use lazy_static::lazy_static;
 use serde::Deserialize;
-use trailbase_sqlite::named_params;
 use ts_rs::TS;
 use utoipa::{IntoParams, ToSchema};
 

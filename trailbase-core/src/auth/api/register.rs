@@ -1,3 +1,4 @@
+use crate::named_params;
 use axum::{
   extract::{Form, State},
   http::StatusCode,
@@ -5,7 +6,6 @@ use axum::{
 };
 use lazy_static::lazy_static;
 use serde::Deserialize;
-use trailbase_sqlite::named_params;
 use utoipa::ToSchema;
 use validator::ValidateEmail;
 

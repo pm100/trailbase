@@ -58,7 +58,7 @@ trailbase-refinery-core = { workspace = true }
 trailbase-refinery-macros = { workspace = true }
 regex = "1.11.0"
 reqwest = { version = "0.12.8", default-features = false, features = ["rustls-tls", "json"] }
-rusqlite = { workspace = true }
+#rusqlite = { workspace = true }
 rust-embed = { version = "8.4.0", default-features = false, features = ["mime-guess"] }
 rustyscript = { version = "^0.11.0", optional = true, features = ["web"] }
 serde = { version = "^1.0.203", features = ["derive"] }
@@ -76,12 +76,13 @@ tower-http = { version = "^0.6.0", features = ["cors", "trace", "fs", "limit"] }
 tower-service = "0.3.3"
 tracing = "0.1.40"
 tracing-subscriber = "0.3.18"
-trailbase-sqlite = { workspace = true }
+#trailbase-sqlite = { workspace = true }
 ts-rs = { version = "10", features = ["uuid-impl", "serde-json-impl"] }
 url = "^2.4.1"
 utoipa = { version = "5.0.0-beta.0", features = ["axum_extras"] }
 uuid = { version = "^1.8.0", features = ["v4", "serde"] }
 validator = { version = "0.19.0", default-features = false }
+sqlx = "0.8.3"
 
 [build-dependencies]
 env_logger = "^0.11.3"

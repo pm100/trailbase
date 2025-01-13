@@ -2,7 +2,11 @@ use itertools::Itertools;
 use log::*;
 use std::borrow::Cow;
 use std::sync::Arc;
-use trailbase_sqlite::{NamedParams, Params as _, Value};
+//use trailbase_sqlite::{NamedParams, Params as _, Value};
+
+use crate::database::params::{NamedParams, Params as _};
+use crate::database::schema::{FileUpload, FileUploads};
+use crate::database::types::Value;
 
 use crate::auth::user::User;
 use crate::config::proto::{ConflictResolutionStrategy, RecordApiConfig};

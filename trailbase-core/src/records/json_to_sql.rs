@@ -1,3 +1,6 @@
+use crate::database::params::NamedParams;
+use crate::database::schema::{FileUpload, FileUploads};
+use crate::database::types::Value;
 use base64::prelude::*;
 use itertools::Itertools;
 use log::*;
@@ -5,8 +8,6 @@ use object_store::ObjectStore;
 use std::borrow::Cow;
 use std::collections::{hash_map::Entry, HashMap};
 use std::sync::Arc;
-use trailbase_sqlite::schema::{FileUpload, FileUploadInput, FileUploads};
-use trailbase_sqlite::{NamedParams, Value};
 
 use crate::config::proto::ConflictResolutionStrategy;
 use crate::records::files::delete_files_in_row;
@@ -560,7 +561,7 @@ impl UpdateQueryBuilder {
               r#"SELECT {file_columns} FROM "{table_name}" WHERE "{pk_column}" = :{pk_column}"#
             ))?;
 
-            use trailbase_sqlite::Params;
+            use crate::database::params::Params;
             [(":pk_column", pk_value)].bind(&mut stmt)?;
 
             let mut rows = stmt.raw_query();
@@ -576,7 +577,7 @@ impl UpdateQueryBuilder {
             let mut stmt = tx.prepare(&format!(
               r#"UPDATE "{table_name}" SET {setters} WHERE "{pk_column}" = :{pk_column}"#
             ))?;
-            use trailbase_sqlite::Params;
+            use crate::database::params::Params;
             params.named_params.bind(&mut stmt)?;
 
             stmt.raw_execute()?;
